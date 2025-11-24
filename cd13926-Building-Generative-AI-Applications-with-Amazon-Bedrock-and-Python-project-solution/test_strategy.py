@@ -172,7 +172,7 @@ class RAGEvaluationMetrics:
     
     @staticmethod
     def calculate_answer_quality_score(reference_answer, generated_answer):
-        """计算答案质量得分（简化版BLEU）"""
+        """计算答案质量得分"""
         ref_tokens = set(reference_answer.lower().split())
         gen_tokens = set(generated_answer.lower().split())
         
@@ -227,15 +227,15 @@ if __name__ == "__main__":
     test_suite = RAGSystemTestSuite()
     
     # 执行各类测试
-    print("🧪 执行RAG系统测试...")
+    print("执行RAG系统测试...")
     try:
         test_suite.test_content_safety_filter()
-        print("✅ 内容安全测试通过")
+        print("内容安全测试通过")
         
         test_suite.test_edge_cases()
-        print("✅ 边界情况测试通过")
+        print("边界情况测试通过")
         
-        print("🎯 所有测试执行完成！")
+        print("所有测试执行完成！")
         
     except Exception as e:
-        print(f"❌ 测试失败: {e}")
+        print(f"测试失败: {e}")
